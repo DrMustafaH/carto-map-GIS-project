@@ -1,14 +1,38 @@
-var client = new carto.client({
-  apiKey: "095b7a9eb18ae059b51c24894a3f89cfc027dac2",
-  username: "Hassabum",
+var map = L.map("map", {
+  center: [30, 0],
+  zoom: 3,
 });
 
+// Add base layer
+L.tileLayer(
+  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+  {
+    maxZoom: 18,
+  }
+).addTo(map);
+
+// Initialize Carto
+var client = new carto.Client({
+  apiKey: "default_public",
+  username: "brelsfoeagain",
+});
+
+// Initialze data source
 var source = new carto.source.SQL("SELECT * FROM Landmarks");
 
-// var layer = new cart.layer.Layer(source, style);
+// Create style for the data
+var style = new carto.style.CartoCSS(`
+  #layer {
+    polygon-fill: red;
+  }
+`);
 
-// client.addLayer(layer);
-// client.getLeafletLayer().addTo(map);
+// Add style to the data
+var layer = new carto.layer.Layer(source, style);
+
+// Add the data to the map as a layer
+client.addLayer(layer);
+client.getLeafletLayer().addTo(map);
 
 var dropdownChoice = document.querySelector(".dropdown");
 
