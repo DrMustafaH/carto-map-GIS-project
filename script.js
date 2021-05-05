@@ -1,7 +1,4 @@
-var map = L.map("map", {
-  center: [30, 0],
-  zoom: 3,
-});
+var map = L.map("map").setView([30, 0], 3);
 
 // Add base layer
 L.tileLayer(
@@ -18,7 +15,7 @@ var client = new carto.Client({
 });
 
 // Initialze data source
-var source = new carto.source.SQL("SELECT * FROM Landmarks");
+var source = new carto.source.Dataset("Landmarks");
 
 // Create style for the data
 var style = new carto.style.CartoCSS(`
@@ -34,16 +31,16 @@ var layer = new carto.layer.Layer(source, style);
 client.addLayer(layer);
 client.getLeafletLayer().addTo(map);
 
-var dropdownChoice = document.querySelector(".dropdown");
+// var dropdownChoice = document.querySelector(".dropdown");
 
-dropdownChoice.addEventListener("change", function (e) {
-  var locationSelected = e.target.value;
+// dropdownChoice.addEventListener("change", function (e) {
+//   var locationSelected = e.target.value;
 
-  if (locationSelected === "suakin") {
-    console.log("hello");
-    var info = source.setQuery(
-      "SELECT name FROM Landmarks WHERE name = '" + locationSelected + "'"
-    );
-    console.log(info);
-  }
-});
+//   if (locationSelected === "suakin") {
+//     console.log("hello");
+//     var info = source.setQuery(
+//       "SELECT name FROM Landmarks WHERE name = '" + locationSelected + "'"
+//     );
+//     console.log(info);
+//   }
+// });
