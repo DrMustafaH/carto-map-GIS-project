@@ -14,7 +14,7 @@ L.tileLayer(
 // Initialize Carto
 var client = new carto.Client({
   apiKey: "default_public",
-  username: "brelsfoeagain",
+  username: "Hassabum",
 });
 
 // Initialze data source
@@ -40,10 +40,10 @@ dropdownChoice.addEventListener("change", function (e) {
   var locationSelected = e.target.value;
 
   if (locationSelected === "suakin") {
+    console.log("hello");
     var info = source.setQuery(
       "SELECT name FROM Landmarks WHERE name = '" + locationSelected + "'"
     );
-    console.log("hello");
     console.log(info);
   }
 });
