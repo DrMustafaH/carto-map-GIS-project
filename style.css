@@ -1,4 +1,6 @@
-/* .sidebar{background: yellow;
+.sidebar{
+  display: absolute;
+  background-color: #CAF4F4;
   cursor: default;
   font-size: 12px;
   position: absolute;
@@ -6,9 +8,10 @@
   height: 100%;
   right: 0px;
   top: 0px;
-  z-index: 10;}
+  z-index: 10;
+}
 
-div{
+/* div{
 display:block
 } */
 
@@ -20,5 +23,5 @@ body{
 #map{
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 65%;
 }

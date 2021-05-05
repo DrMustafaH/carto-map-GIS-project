@@ -1,8 +1,10 @@
-var map = L.map("map").setView([30, 0], 3);
+/* global L, carto */
+
+var map = L.map("map").setView([15.972552, 30.204163], 6);
 
 // Add base layer
 L.tileLayer(
-  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png",
   {
     maxZoom: 18,
   }
@@ -11,11 +13,11 @@ L.tileLayer(
 // Initialize Carto
 var client = new carto.Client({
   apiKey: "default_public",
-  username: "Hassabum",
+  username: "hassabum",
 });
 
 // Initialze data source
-var source = new carto.source.Dataset("Landmarks");
+var source = new carto.source.Dataset("combined_layers_1");
 
 // Create style for the data
 var style = new carto.style.CartoCSS(`
