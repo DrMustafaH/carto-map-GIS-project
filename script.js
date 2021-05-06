@@ -17,7 +17,7 @@ var client = new carto.Client({
 });
 
 // Initialze data source
-var source = new carto.source.Dataset("combined_layers_1");
+var source = new carto.source.SQL("SELECT * FROM combined_layers_1");
 
 // Create style for the data
 var style = new carto.style.CartoCSS(`
@@ -33,16 +33,18 @@ var layer = new carto.layer.Layer(source, style);
 client.addLayer(layer);
 client.getLeafletLayer().addTo(map);
 
-// var dropdownChoice = document.querySelector(".dropdown");
+var dropdownChoice = document.querySelector(".dropdown");
+var suakinContainer = document.getElementById("suakin-info");
+var natMuseumContainer = document.getElementById("national-museum-info");
 
-// dropdownChoice.addEventListener("change", function (e) {
-//   var locationSelected = e.target.value;
+dropdownChoice.addEventListener("change", function (e) {
+  var locationSelected = e.target.value;
 
-//   if (locationSelected === "suakin") {
-//     console.log("hello");
-//     var info = source.setQuery(
-//       "SELECT name FROM Landmarks WHERE name = '" + locationSelected + "'"
-//     );
-//     console.log(info);
-//   }
-// });
+  if (locationSelected === "suakin") {
+    natMuseumContainer.style.display = "none";
+    suakinContainer.style.display = "block";
+  } else if (locationSelected === "national-museum") {
+    suakinContainer.style.display = "none";
+    natMuseumContainer.style.display = "block";
+  }
+});
