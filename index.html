@@ -19,23 +19,55 @@
   <div id="map"></div>
 
   <div class="sidebar">
-    <h1>
-      Sudan Landmarks
-    </h1>
-    <p>
-      introduction: data
-    </p>
-    <select class="dropdown">
-      <option value="national-museum">National Museum</option>
-      <option value="suakin">Suakin</option>
-    </select>
+    <div class="sidebar-content">
+      <h1>
+        Sudan Landmarks
+      </h1>
+      <h3>Please select an Attraction</h3>
+      <div>
+        <select class="dropdown">
+          <option value="national-museum">National Museum</option>
+          <option value="suakin">Suakin</option>
+        </select>
+      </div>
+      <div id="location-info">
+        <div id="suakin-info">
+          <div>
+            <img
+              src="https://cdn.dribbble.com/users/1468149/screenshots/8733081/media/53e8559880b338359fb999d0e6715c13.png?compress=1&resize=400x300"
+              alt="suakin">
+          </div>
+          <div>
+            <button class="btn btn-success" onclick=" window.open('https://en.wikipedia.org/wiki/Suakin')">
+              Wikipedia</button>
+            <button class="btn btn-success"
+              onclick=" window.open('https://www.tripadvisor.ca/LocationPhotoDirectLink-g293835-d7241559-i236673945-Real_Sudan_Tours-Khartoum_Khartoum_State.html')">
+              TripAdvisor</button>
+          </div>
+        </div>
+        <div id="national-museum-info">
+          <div>
+            <img src="https://momaa.org/wp-content/uploads/2019/10/Sudan_National_Museum_8625532907.png"
+              alt="national-museum">
+          </div>
+          <div>
+            <button class="btn btn-success"
+              onclick=" window.open('https://en.wikipedia.org/wiki/National_Museum_of_Sudan')">
+              Wikipedia</button>
+            <button class="btn btn-success"
+              onclick=" window.open('https://www.tripadvisor.com/ShowUserReviews-g293835-d480745-r505407233-Sudan_National_Museum-Khartoum_Khartoum_State.html')">
+              TripAdvisor</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Load Leaflet and Carto libraries -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="https://libs.cartocdn.com/carto.js/v4.2.0/carto.min.js"></script>
 
-    <!-- Load Leaflet and Carto libraries -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://libs.cartocdn.com/carto.js/v4.2.0/carto.min.js"></script>
-
-    <!-- Load our JavaScript -->
-    <script defer src="./script.js"></script>
+  <!-- Load our JavaScript -->
+  <script defer src="./script.js"></script>
 
 </body>
 
