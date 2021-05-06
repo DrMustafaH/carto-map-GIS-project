@@ -46,5 +46,8 @@ dropdownChoice.addEventListener("change", function (e) {
   } else if (locationSelected === "national-museum") {
     suakinContainer.style.display = "none";
     natMuseumContainer.style.display = "block";
+  } else {
+    suakinContainer.style.display = "none";
+    natMuseumContainer.style.display = "none";
   }
 });

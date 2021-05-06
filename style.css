@@ -47,3 +47,8 @@ body{
 #national-museum-info{
   display: none;
 }
+
+.swipe{
+  overflow:auto;
+  white-space:nowrap;
+}
