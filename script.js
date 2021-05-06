@@ -43,6 +43,7 @@ dropdownChoice.addEventListener("change", function (e) {
   if (locationSelected === "suakin") {
     natMuseumContainer.style.display = "none";
     suakinContainer.style.display = "block";
+    map.setView([19.111307, 37.336961], 11);
   } else if (locationSelected === "national-museum") {
     suakinContainer.style.display = "none";
     natMuseumContainer.style.display = "block";
