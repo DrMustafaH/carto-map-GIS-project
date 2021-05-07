@@ -57,6 +57,10 @@ body{
   display: none;
 }
 
+#president-info{
+  display: none;
+}
+
 .swipe{
   overflow:auto;
   white-space:nowrap;
