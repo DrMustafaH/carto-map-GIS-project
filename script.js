@@ -27,7 +27,28 @@ var style = new carto.style.CartoCSS(`
 `);
 
 // Add style to the data
-var layer = new carto.layer.Layer(source, style);
+var layer = new carto.layer.Layer(source, style, {
+  featureClickColumns: ["name", "wiki_link"],
+});
+
+layer.on("featureClicked", function (event) {
+  // Create the HTML that will go in the popup. event.data has all the data for
+  // the clicked feature.
+  //
+  // I will add the content line-by-line here to make it a little easier to read.
+  var content = "<h1>" + event.data["name"] + "</h1>";
+  content += "<div>" + event.data["wiki_link"] + "</div>";
+
+  // If you're not sure what data is available, log it out:
+  console.log(event.data);
+
+  var popup = L.popup();
+  popup.setContent(content);
+
+  // Place the popup and open it
+  popup.setLatLng(event.latLng);
+  popup.openOn(map);
+});
 
 // Add the data to the map as a layer
 client.addLayer(layer);
