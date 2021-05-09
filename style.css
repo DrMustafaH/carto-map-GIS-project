@@ -66,6 +66,10 @@ body{
   font-family: serif, Garamond;
 }
 
+#sanganeb-info{
+  display: none;
+}
+
 #future{
   display: none;
 }
