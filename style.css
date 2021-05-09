@@ -61,6 +61,10 @@ body{
   display: none;
 }
 
+#main-info{
+  display: block;
+}
+
 .swipe{
   overflow:auto;
   white-space:nowrap;
