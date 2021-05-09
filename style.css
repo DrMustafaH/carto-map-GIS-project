@@ -63,6 +63,11 @@ body{
 
 #main-info{
   display: block;
+  font-family: serif, Garamond;
+}
+
+#future{
+  display: none;
 }
 
 .swipe{
@@ -72,4 +77,23 @@ body{
 
 .one-btn{
   margin-left: 150px;
+}
+
+.font1{
+  font-family: serif, Garamond;
+}
+
+.font2{
+  font-family: cursive, lucida;
+}
+
+.future-img{
+  width: 180px;
+  height: 180px;
+  margin: 15px;
+}
+
+.photo-name{
+  margin-top:0px;
+  margin-left: 15px;
 }
