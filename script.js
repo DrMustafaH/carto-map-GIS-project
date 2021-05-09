@@ -22,13 +22,13 @@ var source = new carto.source.SQL("SELECT * FROM combined_layers_1");
 // Create style for the data
 var style = new carto.style.CartoCSS(`
   #layer {
-    polygon-fill: red;
+    polygon-fill: purple;
   }
 `);
 
 // Add style to the data
 var layer = new carto.layer.Layer(source, style, {
-  featureClickColumns: ["name", "wiki_link"],
+  featureClickColumns: ["name", "information"],
 });
 
 layer.on("featureClicked", function (event) {
@@ -37,7 +37,7 @@ layer.on("featureClicked", function (event) {
   //
   // I will add the content line-by-line here to make it a little easier to read.
   var content = "<h1>" + event.data["name"] + "</h1>";
-  content += "<div>" + event.data["wiki_link"] + "</div>";
+  content += "<div>" + event.data["information"] + "</div>";
 
   // If you're not sure what data is available, log it out:
   console.log(event.data);
