@@ -60,11 +60,13 @@ var natMuseumContainer = document.getElementById("national-museum-info");
 var pyramidsContainer = document.getElementById("pyramids-info");
 var sailClubContainer = document.getElementById("sail-club-info");
 var presidentContainer = document.getElementById("president-info");
+var mainInfoContainer = document.getElementById("main-info");
 
 dropdownChoice.addEventListener("change", function (e) {
   var locationSelected = e.target.value;
 
   if (locationSelected === "suakin") {
+    mainInfoContainer.style.display = "none";
     natMuseumContainer.style.display = "none";
     pyramidsContainer.style.display = "none";
     sailClubContainer.style.display = "none";
@@ -72,6 +74,7 @@ dropdownChoice.addEventListener("change", function (e) {
     suakinContainer.style.display = "block";
     map.setView([19.111307, 37.336961], 11);
   } else if (locationSelected === "national-museum") {
+    mainInfoContainer.style.display = "none";
     suakinContainer.style.display = "none";
     sailClubContainer.style.display = "none";
     pyramidsContainer.style.display = "none";
@@ -79,6 +82,7 @@ dropdownChoice.addEventListener("change", function (e) {
     natMuseumContainer.style.display = "block";
     map.setView([15.60597, 32.510107], 17);
   } else if (locationSelected === "pyramids") {
+    mainInfoContainer.style.display = "none";
     suakinContainer.style.display = "none";
     sailClubContainer.style.display = "none";
     pyramidsContainer.style.display = "block";
@@ -86,6 +90,7 @@ dropdownChoice.addEventListener("change", function (e) {
     presidentContainer.style.display = "none";
     map.setView([16.937949, 33.749291], 16);
   } else if (locationSelected === "sail-club") {
+    mainInfoContainer.style.display = "none";
     suakinContainer.style.display = "none";
     sailClubContainer.style.display = "block";
     pyramidsContainer.style.display = "none";
@@ -93,6 +98,7 @@ dropdownChoice.addEventListener("change", function (e) {
     presidentContainer.style.display = "none";
     map.setView([15.611588, 32.534363], 18);
   } else if (locationSelected === "president") {
+    mainInfoContainer.style.display = "none";
     suakinContainer.style.display = "none";
     sailClubContainer.style.display = "none";
     presidentContainer.style.display = "block";
@@ -105,6 +111,7 @@ dropdownChoice.addEventListener("change", function (e) {
     sailClubContainer.style.display = "none";
     natMuseumContainer.style.display = "none";
     presidentContainer.style.display = "none";
+    mainInfoContainer.style.display = "block";
     map.setView([15.972552, 30.204163], 6);
   }
 });
