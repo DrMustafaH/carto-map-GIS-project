@@ -61,6 +61,7 @@ var pyramidsContainer = document.getElementById("pyramids-info");
 var sailClubContainer = document.getElementById("sail-club-info");
 var presidentContainer = document.getElementById("president-info");
 var mainInfoContainer = document.getElementById("main-info");
+var futureContainer = document.getElementById("future");
 
 dropdownChoice.addEventListener("change", function (e) {
   var locationSelected = e.target.value;
@@ -71,6 +72,7 @@ dropdownChoice.addEventListener("change", function (e) {
     pyramidsContainer.style.display = "none";
     sailClubContainer.style.display = "none";
     presidentContainer.style.display = "none";
+    futureContainer.style.display = "none";
     suakinContainer.style.display = "block";
     map.setView([19.111307, 37.336961], 11);
   } else if (locationSelected === "national-museum") {
@@ -79,6 +81,7 @@ dropdownChoice.addEventListener("change", function (e) {
     sailClubContainer.style.display = "none";
     pyramidsContainer.style.display = "none";
     presidentContainer.style.display = "none";
+    futureContainer.style.display = "none";
     natMuseumContainer.style.display = "block";
     map.setView([15.60597, 32.510107], 17);
   } else if (locationSelected === "pyramids") {
@@ -88,6 +91,7 @@ dropdownChoice.addEventListener("change", function (e) {
     pyramidsContainer.style.display = "block";
     natMuseumContainer.style.display = "none";
     presidentContainer.style.display = "none";
+    futureContainer.style.display = "none";
     map.setView([16.937949, 33.749291], 16);
   } else if (locationSelected === "sail-club") {
     mainInfoContainer.style.display = "none";
@@ -95,6 +99,7 @@ dropdownChoice.addEventListener("change", function (e) {
     sailClubContainer.style.display = "block";
     pyramidsContainer.style.display = "none";
     natMuseumContainer.style.display = "none";
+    futureContainer.style.display = "none";
     presidentContainer.style.display = "none";
     map.setView([15.611588, 32.534363], 18);
   } else if (locationSelected === "president") {
@@ -103,14 +108,25 @@ dropdownChoice.addEventListener("change", function (e) {
     sailClubContainer.style.display = "none";
     presidentContainer.style.display = "block";
     pyramidsContainer.style.display = "none";
+    futureContainer.style.display = "none";
     natMuseumContainer.style.display = "none";
     map.setView([15.608938, 32.528277], 17);
+  } else if (locationSelected === "future") {
+    mainInfoContainer.style.display = "none";
+    suakinContainer.style.display = "none";
+    sailClubContainer.style.display = "none";
+    presidentContainer.style.display = "none";
+    pyramidsContainer.style.display = "none";
+    natMuseumContainer.style.display = "none";
+    futureContainer.style.display = "block";
+    map.setView([15.972552, 30.204163], 6);
   } else {
     suakinContainer.style.display = "none";
     pyramidsContainer.style.display = "none";
     sailClubContainer.style.display = "none";
     natMuseumContainer.style.display = "none";
     presidentContainer.style.display = "none";
+    futureContainer.style.display = "none";
     mainInfoContainer.style.display = "block";
     map.setView([15.972552, 30.204163], 6);
   }
